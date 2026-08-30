@@ -1,5 +1,3 @@
-# ai-ml-learning
-My journey learning AI and Machine Learning alongside medical education.
 # AI & ML Learning Journey
 
 I'm an aspiring medical student exploring Artificial Intelligence and Machine Learning alongside medical education.
