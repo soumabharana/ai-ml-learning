@@ -96,12 +96,32 @@ having no_of_products >= 5
 order by total_stock desc
 
 -- Find products whose MRP is greater than the average MRP of all products.
+select *
+from `e1.products`
+where MRP >= (
+              select avg(MRP)
+              from `e1.products`
+              )
 
+--Find the MRP of prouscts whose MRP is below average MRP
+select *
+from `e1.products`
+where MRP < (
+              select avg(MRP)
+              from `e1.products`
+              )
 
+--Find the product or products having the highest MRP
+select *
+from `e1.products`
+where MRP = (
+              select max(MRP)
+              from `e1.products`
+)
 
+-- Task: Find those products which have the top 5 mrp prices
 
-
-
-
-
-
+select distinct(MRP)
+from `e1.products`
+order by MRP desc
+limit 5
