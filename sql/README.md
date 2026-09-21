@@ -10,9 +10,11 @@ My SQL learning work from my AI/ML coursework, practiced using Google BigQuery.
 
 ## Current Progress
 
-The repository currently contains SQL coursework notes through **Join practice (15 uploaded note files)**.
+The repository currently contains **20 uploaded SQL coursework files**, reaching **Window Functions I**.
 
 The uploaded-note numbering is my repository/upload numbering and does **not necessarily match the official course lecture numbering**.
+
+SQL has progressed from basic querying and aggregation to joins, subqueries, analytical queries, `CASE WHEN`, and the first set of window functions. I have temporarily moved on to NumPy and plan to return to SQL after revision.
 
 ## Class Notes
 
@@ -29,10 +31,15 @@ The uploaded-note numbering is my repository/upload numbering and does **not nec
 | 9 | `GROUP BY` + `HAVING` practice; multi-condition aggregation; filtered aggregates; warehouse and order-status summaries |
 | 10 | Advanced aggregation practice: supplier/category statistics, sales thresholds, discounts, successful payments, customer order ranges, warehouse stock and inventory conditions |
 | 11 | Subquery introduction: comparing values with aggregate results; average/max MRP; top-MRP exploration; percentage-of-total calculation; aggregation practice before nested queries |
-| 12 | Nested subqueries: `IN` with subqueries; top-5 MRP products; suppliers with at least 5 products; customers with at least 3 orders; customer filtering; derived-table subqueries and comparing supplier counts with their average |
+| 12 | Nested subqueries: `IN (subquery)`; top-5 MRP products; suppliers with at least 5 products; customers with at least 3 orders; customer filtering; derived-table subqueries and comparing supplier counts with their average |
 | 13 | `INNER JOIN`; joining products with categories and suppliers; filtering joined data; cancelled orders with customer details; order-level sales; customer-level sales across multiple tables |
 | 14 | `LEFT JOIN` and `RIGHT JOIN`; finding products/customers with no related records; retaining zero-order customers; multi-table customer/payment reports |
 | 15 | Join practice combining multiple `INNER JOIN`s and `LEFT JOIN`s with aggregates, `GROUP BY`, `HAVING`, `ORDER BY`, `COALESCE`, and business-style reporting questions |
+| 16 | `CASE WHEN`; warehouse sales analysis with `LEFT JOIN`; customers spending above average; products performing above their category average; age classification; order-value classification |
+| 17 | Practice with order-value classification; category-level sales reporting; `COUNT(DISTINCT)`; filtered aggregation; product filtering using MRP, discount percentage and total sales |
+| 18 | Multi-stage analytical queries using a derived table; employee order performance; customer and city-level reports; product/category analysis; payment-method summaries; top-15 products; warehouse inventory analysis |
+| 19 | Warehouse inventory aggregation; identifying stocked but never-sold products with `LEFT JOIN ... IS NULL`; supplier classification using `CASE WHEN`; customers buying across multiple categories; failed-payment customer analysis; employee sales analysis |
+| 20 | Introduction to window functions: `OVER()`; `PARTITION BY`; windowed `SUM`, `AVG`, `COUNT`; overall totals; percentage contribution; `ROW_NUMBER()`; plus correlated-subquery practice such as highest-MRP product per category |
 
 ## Skills Built So Far
 
@@ -50,6 +57,7 @@ The uploaded-note numbering is my repository/upload numbering and does **not nec
 
 ### Aggregation
 - `COUNT`
+- `COUNT(DISTINCT ...)`
 - `SUM`
 - `AVG`
 - `MIN`
@@ -66,13 +74,30 @@ The uploaded-note numbering is my repository/upload numbering and does **not nec
 - Identifying missing relationships with `LEFT JOIN ... IS NULL`
 - Handling missing aggregate values with `COALESCE`
 
+### Conditional & Analytical SQL
+- `CASE WHEN`
+- Conditional classification of rows/groups
+- Multi-stage analytical queries
+- Business-style reporting across several related tables
+
 ### Subqueries
 - Scalar subqueries
 - `IN (subquery)`
 - Nested subqueries
 - Derived tables
+- Correlated subqueries
 - Aggregation inside subqueries
-- Comparing grouped results against an average/aggregate result
+- Comparing grouped results against average/aggregate results
+
+### Window Functions
+- `OVER()`
+- `PARTITION BY`
+- `SUM() OVER(...)`
+- `AVG() OVER(...)`
+- `COUNT() OVER(...)`
+- Overall totals with `SUM() OVER()`
+- Percentage contribution calculations
+- `ROW_NUMBER() OVER(...)`
 
 ## Data Model Practiced
 
@@ -113,10 +138,14 @@ INNER JOIN
   ↓
 LEFT / RIGHT JOIN
   ↓
+CASE WHEN
+  ↓
 Multi-table Analytical Queries
+  ↓
+Window Functions
 ```
 
-The latest practice session shows the transition from learning JOIN syntax to using JOINs as building blocks for actual analytical questions.
+The latest SQL work marks the transition from grouped aggregation to calculations that can be performed across related rows while keeping the original row-level detail.
 
 ## Course Context
 
