@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      TELEGRAM_BOT_TOKEN: '8877520110:AAGe0XOjjbbbsqf5FwlBCmOodFTH32nP9hc'
-      TELEGRAM_CHAT_ID:  8621671769
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       TZ: Asia/Kolkata
     steps:
       - name: Check out repository
